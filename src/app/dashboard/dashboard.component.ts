@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, signal } from '@angular/core';
-import { NovelsComponent } from './novels/novels.component'
+import { NovelAllComponent } from './novel-all/novel-all.component'
 import { RouterOutlet } from '@angular/router'
 
 @Component({
   selector: 'dashboard',
   standalone: true,
   imports: [
-    NovelsComponent,
+    NovelAllComponent,
     RouterOutlet,
   ],
   templateUrl: './dashboard.component.html',

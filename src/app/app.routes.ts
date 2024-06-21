@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component'
-import { NovelsComponent } from './dashboard/novels/novels.component'
+import { NovelAllComponent } from './dashboard/novel-all/novel-all.component'
 import { DashboardComponent } from './dashboard/dashboard.component'
 
 export const routes: Routes = [
@@ -9,12 +9,20 @@ export const routes: Routes = [
     component: AppComponent, // this is the component with the <router-outlet> in the template
     children: [
       {
-        path: 'dashboard', // child route path
-        component: DashboardComponent, // child route component that the router renders
+        path: 'dashboard',
+        component: DashboardComponent,
         children: [
           {
-            path: '', // child route path
-            component: NovelsComponent, // child route component that the router renders
+            path: '',
+            component: NovelAllComponent,
+          },
+          {
+            path: 'new',
+            component: NovelNewComponent,
+          },
+          {
+            path: 'new',
+            component: NovelEditComponent,
           },
         ]
       },

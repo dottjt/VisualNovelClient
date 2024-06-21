@@ -1,0 +1,22 @@
+<div>
+  <h1>New Novel</h1>
+
+  <form [formGroup]="newNovelForm" (ngSubmit)="onSubmit()">
+    <label for="novelTitle">Novel Title: </label>
+    <input id="novelTitle" type="text" formControlName="novelTitle" />
+
+    <div
+      *ngIf="newNovelForm.controls.novelTitle.invalid && (newNovelForm.controls.novelTitle.dirty || newNovelForm.controls.novelTitle.touched)"
+    >
+      <div *ngIf="newNovelForm.controls.novelTitle.errors?.required">
+        Novel Title is required.
+      </div>
+      <div *ngIf="newNovelForm.controls.novelTitle.errors?.minlength">
+        Novel Title must be at least 5 characters long.
+      </div>
+    </div>
+    <br />
+
+    <button type="submit" [disabled]="!newNovelForm.valid">Submit Profile</button>
+  </form>
+</div>

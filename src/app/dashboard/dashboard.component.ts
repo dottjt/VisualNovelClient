@@ -20,9 +20,9 @@ export class DashboardComponent {
     // const params = new HttpParams({fromString: 'name=term'});
     // const existingSlides = this.httpClient.request('GET', 'http://localhost:5235/weatherforecast', { responseType:'json' });
 
-    httpClient.get<any>('http://localhost:5235/weatherforecast').subscribe(obj => {
-      console.log(obj)
-    });
+    // httpClient.get<any>('http://localhost:5235/weatherforecast').subscribe(obj => {
+    //   console.log(obj)
+    // });
   }
 
 

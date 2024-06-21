@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { AppComponent } from './app.component'
 import { NovelAllComponent } from './dashboard/novel-all/novel-all.component'
 import { DashboardComponent } from './dashboard/dashboard.component'
+import { NovelNewComponent } from './dashboard/novel-new/novel-new.component'
+import { NovelEditComponent } from './dashboard/novel-edit/novel-edit.component'
 
 export const routes: Routes = [
   {
@@ -21,7 +23,7 @@ export const routes: Routes = [
             component: NovelNewComponent,
           },
           {
-            path: 'new',
+            path: 'edit',
             component: NovelEditComponent,
           },
         ]

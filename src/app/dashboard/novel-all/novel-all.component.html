@@ -3,7 +3,7 @@
 
   @if (novels.length === 0) {
     <div>
-      Sorry, no novels here! Click <a href="">here</a>
+      Sorry, no novels here! Click <a routerLink="/dashboard/new" routerLinkActive="active">here</a>
     </div>
   } @else {
     @for(chapter of novels; track chapter) {

@@ -1,19 +1,19 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, signal } from '@angular/core';
-import { VisualNovelChaptersComponent } from './visual-novel-chapters/visual-novel-chapters.component'
+import { NovelsComponent } from './novels/novels.component'
 import { RouterOutlet } from '@angular/router'
 
 @Component({
-  selector: 'app-visual-novel-creator',
+  selector: 'dashboard',
   standalone: true,
   imports: [
-    VisualNovelChaptersComponent,
+    NovelsComponent,
     RouterOutlet,
   ],
-  templateUrl: './visual-novel-creator.component.html',
-  styleUrl: './visual-novel-creator.component.css'
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.css'
 })
-export class VisualNovelCreatorComponent {
+export class DashboardComponent {
   existingSlides = signal([])
 
   constructor(private httpClient: HttpClient) {

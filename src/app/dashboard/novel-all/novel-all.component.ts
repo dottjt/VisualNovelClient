@@ -14,10 +14,8 @@ export class NovelAllComponent {
   novels: Novel[] = []
 
   constructor(private httpClient: HttpClient) {
-    this.httpClient.get<Novel[]>('/api/novels', { responseType: 'json', observe: 'response' }).subscribe(obj => {
-      if (obj.body) {
-        this.novels = obj.body
-      }
+    this.httpClient.get<Novel[]>('/api/novels', { responseType: 'json' }).subscribe(obj => {
+      this.novels = obj
     });;
   }
 }

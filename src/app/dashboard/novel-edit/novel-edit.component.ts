@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http'
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class NovelEditComponent {
 
+  constructor(public httpClient: HttpClient) { }
+
+  onSubmit() {
+    this.httpClient.get<Novel[]>('/api/novels', { responseType: 'json' }).subscribe(obj => {
+      this.novels = obj
+    });;
+  }
 }

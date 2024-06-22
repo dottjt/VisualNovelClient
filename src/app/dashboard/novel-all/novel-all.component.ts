@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http'
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router'
+import { Novel } from '../../../types/Type'
 
 @Component({
   selector: 'novel-all',
@@ -9,5 +11,13 @@ import { RouterLink } from '@angular/router'
   styleUrl: './novel-all.component.css'
 })
 export class NovelAllComponent {
-  novels = []
+  novels: Novel[] = []
+
+  constructor(private httpClient: HttpClient) {
+    this.httpClient.get<Novel[]>('/api/novels', { responseType: 'json', observe: 'response' }).subscribe(obj => {
+      if (obj.body) {
+        this.novels = obj.body
+      }
+    });;
+  }
 }

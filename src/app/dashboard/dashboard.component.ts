@@ -1,20 +1,21 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, signal } from '@angular/core';
-import { NovelAllComponent } from './novel-all/novel-all.component'
 import { RouterOutlet } from '@angular/router'
+
+import { NavbarComponent } from '../shared/navbar/navbar.component'
 
 @Component({
   selector: 'dashboard',
   standalone: true,
   imports: [
-    NovelAllComponent,
     RouterOutlet,
+    NavbarComponent,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-  existingSlides = signal([])
+  // existingSlides = signal([])
 
   constructor(private httpClient: HttpClient) {
     // const params = new HttpParams({fromString: 'name=term'});

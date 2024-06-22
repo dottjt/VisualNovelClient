@@ -5,15 +5,15 @@
     <label for="novelTitle">Novel Title: </label>
     <input id="novelTitle" type="text" formControlName="novelTitle" />
 
-    <div
-      *ngIf="newNovelForm.controls.novelTitle.invalid && (newNovelForm.controls.novelTitle.dirty || newNovelForm.controls.novelTitle.touched)"
-    >
-      <div *ngIf="newNovelForm.controls.novelTitle.errors?.required">
-        Novel Title is required.
-      </div>
-      <div *ngIf="newNovelForm.controls.novelTitle.errors?.minlength">
-        Novel Title must be at least 5 characters long.
-      </div>
+    <div>
+      @if (newNovelForm.controls.novelTitle.invalid && (newNovelForm.controls.novelTitle.dirty || newNovelForm.controls.novelTitle.touched)) {
+        @if (newNovelForm.controls.novelTitle.errors?.['required']) {
+          Novel Title is required.
+        }
+        @if (newNovelForm.controls.novelTitle.errors?.['minlength']) {
+          Novel Title must be at least 5 characters long.
+        }
+      }
     </div>
     <br />
 
